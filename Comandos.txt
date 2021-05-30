@@ -1,0 +1,74 @@
+Comandos Git Bash.
+
+Verificar versão do Git:
+-   git --version
+
+Verificar os arquivos dentro da pasta:
+-   ls
+
+## Iniciar um Repositorio ##
+
+Inicializar um repositorio:
+-   git init
+
+Status:
+-   git status
+
+Utilizamos para que o git começe a monitorar os arquivos, começa a reconhecer as mudaças:
+-   git add .
+
+Realizar um commit com a inclusão de uma mensagem:
+-   git commit -m "Mensagem aqui"
+
+Criar a Branch main:
+-   git branch -M main
+
+Iniciar um repositorio remoto:
+
+-   git remote add origin (url)
+
+Enviar os dados para o repositorio remoto:
+
+-   git push -u origin main
+
+
+## Clonar Repositorio ##
+
+Clonar um repositorio:
+-   git clone (url)
+
+
+## Historicos de Repositorio ##
+
+Historico de alterações, cada mensagem de commit:
+-   git log 
+
+Historico de alterações simplificado:
+-   git log --oneline
+
+Historico de alterações com commit e as alterações realizadas no codigo:
+-   git log -p
+
+Historico de alterações com dados especificos usando o git log:
+-   https://devhints.io/git-log
+
+
+
+## Configurações do Repositorio ##
+
+Alteração dos dados de login e user name de forma global ou local:
+-   git config --global user.name "Nome"
+
+-   git config --global user.email "email@exemple.com"
+
+Para visualizar os dados de login e user name:
+-   git config user.name
+-   git config user.email
+
+Para renomear repositorio:
+
+-   git remote rename nomedorepositorio novonome
+
+## Ignorar arquivos no git ##
+
+Podemos criar um arquivo .gitigore para ignorar arquivos dentro do nosso projeto para que isso aconteça devemos informar o nome do aquivo que gostariamos que o git ignore.
