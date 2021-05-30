@@ -3,9 +3,6 @@ Comandos Git Bash.
 Verificar versão do Git:
 -   git --version
 
-Verificar os arquivos dentro da pasta:
--   ls
-
 ## Iniciar um Repositorio ##
 
 Inicializar um repositorio:
@@ -13,6 +10,9 @@ Inicializar um repositorio:
 
 Status:
 -   git status
+
+Verificar os arquivos dentro da pasta:
+-   ls
 
 Utilizamos para que o git começe a monitorar os arquivos, começa a reconhecer as mudaças:
 -   git add .
@@ -24,18 +24,82 @@ Criar a Branch main:
 -   git branch -M main
 
 Iniciar um repositorio remoto:
-
 -   git remote add origin (url)
+-   git remote -v (Verificar os repositorio remotos)
 
 Enviar os dados para o repositorio remoto:
-
--   git push -u origin main
+-   git push -u origin master
 
 
 ## Clonar Repositorio ##
 
 Clonar um repositorio:
 -   git clone (url)
+
+
+## Ramifiações no Repositorio ##
+
+Criar branch
+-   git branch nomedabranch
+
+Começar um nessa nova branch
+-   git checkout nomedabranch
+
+Criar e começar na branch (-b serve para criar um nova branch)
+-   git checkout -b nomedabranch
+
+
+## Unindo os trabalhos com a criação de um novo commit##
+-   git merge nomedabranch 
+
+obs: Devo está na master para fazer o merge.
+
+
+## Unindo os trabalhos sem a criação de um novo commit##
+-   git rebase nomedabranch
+
+obs: Devo está na master para fazer o rebase.
+
+Verificar a Branch de forma grafica
+-   git log --graph
+
+
+## Desfazer alterações sem git add ##
+-   git checkout -- nomedoarquivo
+
+
+## Desfazer alterações com git add ##
+-   git reset HEAD nomedoarquivo
+-   git checkout -- nomedoarquivo
+
+
+## Desfazer alterações depois do commit ##
+-   git log (Para pegar o numero ID do commit)
+-   git revert ID
+
+
+## Salvar alterações de forma Temporaria  ##
+
+-   git stash
+-   git list (Listar as alterações temporarias)
+-   git apply numero (pegar o numero dento do {0})
+-   git stash pop (Retira da stash)
+
+
+## Voltar no tempo do projeto, Navegar nos estados do projeto ##
+
+-   git checkout numero ID commit
+-   git checkout -b nomedabranch (Criar um branch, caso sejá criado commit sem a branch os commit fica desanexado da linha de desenvolvimento)
+
+## Verificar o que está diferente no projeto##
+
+Verfifcar por commits
+
+-   git diff ID .. ID  (.. significa até)
+
+Verificar por alteraçãos antes do add.
+
+-   git diff 
 
 
 ## Historicos de Repositorio ##
@@ -53,12 +117,10 @@ Historico de alterações com dados especificos usando o git log:
 -   https://devhints.io/git-log
 
 
-
 ## Configurações do Repositorio ##
 
 Alteração dos dados de login e user name de forma global ou local:
 -   git config --global user.name "Nome"
-
 -   git config --global user.email "email@exemple.com"
 
 Para visualizar os dados de login e user name:
@@ -69,6 +131,17 @@ Para renomear repositorio:
 
 -   git remote rename nomedorepositorio novonome
 
+
 ## Ignorar arquivos no git ##
 
 Podemos criar um arquivo .gitigore para ignorar arquivos dentro do nosso projeto para que isso aconteça devemos informar o nome do aquivo que gostariamos que o git ignore.
+
+
+## Versões no git TAG ##
+
+-   git tag -a nomedaversao (Ex: v0.1.0) -m "Podemos colocar uma mansagem"
+-   git remote -v 
+-   git push nomedorepositorio master 
+-   git push nomedaversao
+
+Para aceitar commit: :x
