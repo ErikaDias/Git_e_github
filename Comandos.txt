@@ -143,5 +143,10 @@ Podemos criar um arquivo .gitigore para ignorar arquivos dentro do nosso projeto
 -   git remote -v 
 -   git push nomedorepositorio master 
 -   git push nomedaversao
+ 
+ Deletar Tag:
+
+-  git tag -d numeroversao
+-  git push origin :refs/tags/numeroversao
 
 Para aceitar commit: :x
